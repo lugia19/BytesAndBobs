@@ -9,6 +9,8 @@ usernames = {
     "userID": "username",
 }
 
+messages_db_path = r"C:\Users\lugia19\Desktop\messages-dnd.db"
+
 def get_rolls_by_user(filepath) -> dict:
     users = {}  # Store rolls per user
 
@@ -125,8 +127,7 @@ def generate_user_roll_graph(users:dict):
     plt.show()
 
 def main():
-    user_data = get_rolls_by_user(r"C:\Users\lugia19\Desktop\temp\messages-dnd.db")
-    #user_data = get_rolls_by_user(r"C:\Users\lugia19\Desktop\temp\messages-lan.db")
+    user_data = get_rolls_by_user(messages_db_path)
     print_roll_stats(user_data)
     generate_user_roll_graph(user_data)
 
